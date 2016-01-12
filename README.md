@@ -5,15 +5,15 @@ After deploy a first solution to modernize my old wired home alarm, I've discove
 ## Hardware
 
 No change on existing alarm hardware base on existing sensors and sirens. All managed via an Arduino.
-But I've added some IOT module like temperature, humidity sensors based on the cheap wifi chip ![ESP8266](http://www.esp8266.com/).
+But I've added some IOT module like temperature, humidity sensors based on the cheap wifi chip [ESP8266](http://www.esp8266.com/).
 
 
 ## Software
 
 The new stack is base on :
-	- ![MQTT](http://mqtt.org/) protocole for communication between all IOT objects,
-	- ![Node-RED](http://nodered.org/) application to orchestrate and build scenario easily
-	- ![Meteor(]https://www.meteor.com/) framework with Angular ![Meteor-angular](http://www.angular-meteor.com/) for the front-end solution.
+	- [MQTT](http://mqtt.org/) protocole for communication between all IOT objects,
+	- [Node-RED](http://nodered.org/) application to orchestrate and build scenario easily
+	- [Meteor(]https://www.meteor.com/) framework with Angular ![Meteor-angular](http://www.angular-meteor.com/) for the front-end solution.
 
 
 ### MQTT

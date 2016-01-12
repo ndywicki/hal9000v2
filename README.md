@@ -36,7 +36,7 @@ Used packages:
 	- Package 4
 
 Meteor application is deployed on Amazon EC2 cloud free instance (it's enough for my requirement).
-For Meteor deployment I'm used the ![Meteor Up X](https://github.com/arunoda/meteor-up/tree/mupx) tool
+For Meteor deployment I'm used the [Meteor Up X](https://github.com/arunoda/meteor-up/tree/mupx) tool
 
 ### ESP8266 development
 

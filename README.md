@@ -18,7 +18,7 @@ The new stack is base on :
 
 ### MQTT
 
-I've used the ![Mosquitto](http://mosquitto.org/)
+I've used the [Mosquitto](http://mosquitto.org/)
 
 ### Node-red
 

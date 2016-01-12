@@ -1,0 +1,208 @@
+<div class="container">
+
+    <!-- FIRST ROW OF BLOCKS -->
+    <div class="row">
+
+        <!-- USER PROFILE BLOCK -->
+        <div class="col-sm-3 col-lg-3" ng-show="currentUser">
+            <div class="dash-unit">
+                <dtitle>User Profile</dtitle>
+                <hr>
+                <div class="thumbnail">
+                    <img src="assets/img/fox.jpg"
+                         alt="Nicolas Dywicki" class="img-circle">
+                </div><!-- /thumbnail -->
+                <h1>Hello {{currentUser.username}}</h1>
+
+                <h3>Pontoise, France</h3>
+                <br>
+
+                <div class="info-user">
+                    <span aria-hidden="true" class="li_user fs1"></span>
+                    <span aria-hidden="true" class="li_settings fs1"></span>
+                    <span aria-hidden="true" class="li_mail fs1"></span>
+                    <span aria-hidden="true" class="li_key fs1"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-lg-3" ng-show="!currentUser"></div>
+
+        <!-- ALARM STATUS -->
+        <div class="col-sm-3 col-lg-3" ng-controller="AlarmController as alarmCtrl">
+            <div class="half-unit">
+                <dtitle>Alarm status</dtitle>
+                <hr>
+                <div class="cont cont-nomargin">
+                    <li aria-hidden="true" class="fa fa-green fa-{{(alarmCtrl.alarm.status === 'off') ? 'bell-slash fa-2x' : 'bell fa-2x'}}"></li>
+                    <br>
+                    <p>
+                        <bold ng-if="alarmCtrl.isOff()">OFF</bold>
+                        <bold ng-if="alarmCtrl.isSiren()"><bad>!! SIREN !!</bad></bold>
+                        <bold ng-if="alarmCtrl.isArmed()"><bad>ARMÉE</bad></bold>
+                        <bold ng-if="alarmCtrl.isPerimetric()"><warn>PERIMETRIC</warn></bold>
+                    </p>
+                    tempo: {{alarmCtrl.alarm.tempo}}s
+                </div>
+            </div>
+            <div class="half-unit" ng-show="currentUser">
+                <dtitle>Alarm commandes</dtitle>
+                <hr>
+                <div class="info-user">
+                    <span aria-hidden="true">tempo:</span>
+                        <span aria-hidden="true">
+                            <input type="number" class="numeric numeric-label" ng-model=alarmCtrl.alarmCmd.tempo id="tempo" ng-change="alarmCtrl.sentCommand('tempo')">
+                        </span>
+                </div>
+                <div class="switch">
+                    <input type="radio" class="switch-input" name="view" value="{{alarmCtrl.AlarmStatusEnum.off}}"
+                           id="off" ng-model="alarmCtrl.alarmCmd.status"
+                           ng-change="alarmCtrl.sentCommand('status')">
+                    <label for="off" class="switch-label switch-label-off">Off</label>
+                    <input type="radio" class="switch-input" name="view" value="{{alarmCtrl.AlarmStatusEnum.armed}}"
+                           id="on" ng-model="alarmCtrl.alarmCmd.status"
+                           ng-change="alarmCtrl.sentCommand('status')">
+                    <label for="on" class="switch-label switch-label-on">Armed</label>
+                    <span class="switch-selection"></span>
+                </div>
+
+                <div class="switch switch-blue">
+                    <input type="radio" class="switch-input" name="view2" value="{{alarmCtrl.AlarmModeEnum.full}}"
+                           id="full" checked="" ng-model="alarmCtrl.alarmCmd.mode" ng-change="alarmCtrl.sentCommand('mode')">
+                    <label for="full" class="switch-label switch-label-off">Full</label>
+                    <input type="radio" class="switch-input" name="view2" value="{{alarmCtrl.AlarmModeEnum.perimetric}}"
+                           id="perimetric" ng-model="alarmCtrl.alarmCmd.mode" ng-change="alarmCtrl.sentCommand('mode')">
+                    <label for="perimetric" class="switch-label switch-label-on">Perimetric</label>
+                    <span class="switch-selection"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TODAY & ALARM SENSOR STATUS -->
+        <div class="col-sm-3 col-lg-3">
+            <div class="half-unit" ng-controller="WeatherController as weather">
+                <dtitle>Aujourd'hui</dtitle>
+                <hr>
+                <div class="clockcenter">
+                    <div>{{weather.weather.titre}}</div>
+                    <digiclock>{{ weather.clock | date:'HH:mm:ss'}}</digiclock>
+                    <div>{{weather.weather.saint}}</div>
+                    <div>{{weather.weather.soleil}}</div>
+                </div>
+            </div>
+            <div class="half-unit">
+                <dtitle>Alarm</dtitle>
+                <hr>
+                <div id="alarm" class="text" ng-controller="AlarmSensorsController as alarmSensors">
+                    <div ng-repeat="sensor in alarmSensors.alarmSensors">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8 sensor-label">{{sensor.message.label}}</div>
+                                <div class="col-sm-4">
+                                    <span ng-if="sensor.message.value === 0" class="ok">OK</span>
+                                    <span ng-if="sensor.message.value === 1" class="bad">HIT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CAMERAS -->
+        <div class="col-sm-3 col-lg-3">
+            <div class="half-unit">
+                <dtitle>Camera 1</dtitle>
+                <hr>
+                <div id="camera1" class="camera">
+                    <!--<img src="http://192.168.1.46:8080/?action=stream" style="width: 180px;">-->
+                    <img src="http://88.187.206.124:8081" style="width: 180px;">
+                </div>
+            </div>
+            <div class="half-unit">
+                <dtitle>Camera 2</dtitle>
+                <hr>
+                <div id="camera2"></div>
+            </div>
+        </div>
+
+    </div><!-- /row -->
+
+
+    <!-- SECOND ROW OF BLOCKS -->
+    <div class="row">
+
+        <!-- WEATHER -->
+        <div class="col-sm-3 col-lg-3" ng-controller="WeatherController as weather">
+            <div class="dash-unit">
+                <dtitle>Météo</dtitle>
+                <hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">Matin</div>
+                        <div class="col-sm-3">Midi</div>
+                        <div class="col-sm-3">Soir</div>
+                        <div class="col-sm-3">Nuit</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img class="weather-icon" src="assets/img/weather/weather-{{weather.weather.matin.picto}}.svg">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="weather-icon" src="assets/img/weather/weather-{{weather.weather.midi.picto}}.svg">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="weather-icon" src="assets/img/weather/weather-{{weather.weather.soir.picto}}.svg">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="weather-icon" src="assets/img/weather/weather-{{weather.weather.nuit.picto}}.svg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3" style="font-size: 10px;">{{weather.weather.matin.temp}}°C</div>
+                        <div class="col-sm-3" style="font-size: 10px;">{{weather.weather.midi.temp}}°C</div>
+                        <div class="col-sm-3" style="font-size: 10px;">{{weather.weather.soir.temp}}°C</div>
+                        <div class="col-sm-3" style="font-size: 10px;">{{weather.weather.nuit.temp}}°C</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">Pluie</div>
+                        <div class="col-sm-4">Ecart</div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><img src="assets/img/weather/aac_pluie_{{weather.weather.pluie.picto}}.svg"></div>
+                        <div class="col-sm-4">{{weather.weather.ecart}}°C</div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">{{weather.weather.pluie.percent}}%</div>
+                        <div class="col-sm-4">{{weather.weather.vent.txt}}</div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DONUT CHART BLOCK -->
+        <div class="col-sm-3 col-lg-3">
+            <div class="dash-unit">
+                <nd-chart-pie title="Humidité" topic="revspace/sensors/nose/humidity" color="#b2c831"></nd-chart-pie>
+            </div>
+        </div>
+
+        <!-- DONUT CHART BLOCK -->
+        <div class="col-sm-3 col-lg-3">
+            <div class="dash-unit">
+                <nd-chart-pie title="Température" topic="sensors/salon/temperature" color="#fa1d2d"></nd-chart-pie>
+            </div>
+        </div>
+
+        <!-- GRAPH CHART -->
+        <div class="col-sm-3 col-lg-3">
+            <div class="half-unit">
+                <dtitle>Température</dtitle>
+                <!--<nd-chart id="temp1" topic="revspace/sensors/2-t1"></nd-chart>-->
+                <nd-chart-line id="temp1" topic="revspace/sensors/4-t0"></nd-chart-line>
+            </div>
+        </div>
+    </div><!-- /row -->
+
+</div> <!-- /container -->

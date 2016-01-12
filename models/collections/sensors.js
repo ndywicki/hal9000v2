@@ -1,0 +1,1 @@
+this.Sensors = new Mongo.Collection("sensors");

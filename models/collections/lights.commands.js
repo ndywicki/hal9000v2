@@ -1,0 +1,1 @@
+this.LightsCommands = new Mongo.Collection("lights.commands");

@@ -1,0 +1,46 @@
+<head>
+    <meta charset="utf-8">
+    <title>Hal9000 - home domotic</title>
+
+    <base href="/">
+    <!-- Fav Icon -->
+    <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+</head>
+
+<body ng-app="hal9000" ng-strict-di="" ng-class="$root.bodyClass">
+    <div>
+
+        <!-- NAVIGATION MENU -->
+        <nd-header></nd-header>
+
+        <!-- CONTENT -->
+        <div ui-view=""></div>
+
+        <!-- FOOTER -->
+        <div id="footerwrap">
+            <footer class="clearfix"></footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <p><img src="assets/img/logo.png" alt="">
+                        </p>
+
+                        <p>Ha9000 Dashboard - Nicolas Dywicki - Copyright 2016</p>
+                    </div>
+
+                </div><!-- /row -->
+            </div><!-- /container -->
+        </div><!-- /footerwrap -->
+
+    </div> <!-- ng-app -->
+
+    <!-- highcharts-ng -->
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+
+    <!-- Google Fonts call. Font Used Open Sans & Raleway -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+</body>

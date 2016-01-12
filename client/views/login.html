@@ -1,0 +1,27 @@
+<div class="container" style="height: 620px">
+    <div class="row" ng-controller="LoginController">
+        <div class="col-lg-offset-4 col-lg-4" style="margin-top:100px">
+            <div class="block-unit" style="text-align:center; padding:8px 8px 8px 8px;">
+                <!--<img src="assets/img/fox.jpg" alt="" class="img-circle">-->
+                <i class="fa fa-user fa-4x"></i>
+                <br>
+                <br>
+                <div class="alert alert-danger" ng-show="error">
+                    There was a problem logging in. Please try again.
+                </div>
+                <form class="cmxform" ng-submit="submit()" name="userForm">
+                    <fieldset>
+                        <p>
+                            <input class="input-login" id="username" name="username" ng-model="username" type="text" placeholder="Username" required>
+                            <input class="input-login" id="password" name="password" ng-model="password" type="password" placeholder="Password" required>
+                        </p>
+                        <input class="submit btn-success btn btn-large" type="submit" value="Login">
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

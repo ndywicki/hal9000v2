@@ -1,0 +1,1 @@
+Alarm = new Mongo.Collection('alarm.status');

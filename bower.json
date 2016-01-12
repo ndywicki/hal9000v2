@@ -1,0 +1,19 @@
+{
+  "name": "hal9000v2",
+  "version": "0.0.1",
+  "authors": [
+    "ndywicki <nicolas.dywicki@gmail.com>"
+  ],
+  "description": "Home domotic",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexslider": "~2.6.0"
+  }
+}

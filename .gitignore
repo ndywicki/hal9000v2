@@ -1,0 +1,9 @@
+.idea/
+*.iml
+
+# MupX
+mup.json
+settings.json
+
+# Dev scripts
+*.bat

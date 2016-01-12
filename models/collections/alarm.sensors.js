@@ -1,0 +1,1 @@
+this.AlarmSensors = new Mongo.Collection("alarm.sensors");

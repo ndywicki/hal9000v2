@@ -1,0 +1,4 @@
+<select ng-show="chartLine.enableModeSelection" ng-model="chartLine.mode" ng-change="chartLine.updateMode()" ng-options="mode for mode in chartLine.modes" style="font-size: 11px;"></select>
+<canvas id="{{id}}" class="chart chart-line" chart-data="chartLine.data" chart-labels="chartLine.labels" chart-options="chartLine.options"
+        chart-colours="chartLine.colours" chart-click="chartLine.onClick"></canvas>
+<div class="cont-margin-0">Current: <span class="ok">{{chartLine.sensor[0].value}}</span>°C</div>

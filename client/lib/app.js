@@ -1,0 +1,1 @@
+angular.module('hal9000',['angular-meteor', 'ui.router', 'highcharts-ng', 'chart.js', 'angularUtils.directives.dirPagination']);

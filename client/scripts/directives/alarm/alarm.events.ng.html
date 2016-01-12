@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-12 col-lg-12">
+        <h4><strong>Evénements</strong></h4>
+        <div>
+            <input type="search" ng-model="alarmEventsList.searchEvent" placeholder="Search event" />
+        </div>
+        <table class="display">
+            <thead>
+            <tr>
+                <!--<li aria-hidden="true" class="fa fa-{{(alarm.status === 'off') ? 'bell-slash fa-2x' : 'bell fa-2x'}}"></li>-->
+                <th class="col-md-2" ng-click="alarmEventsList.updateSort()">Date <i class="fa fa-sort-{{(alarmEventsList.orderProperty == 1) ? 'asc' : 'desc' }}"></i></th>
+                <th class="col-md-8">Event</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="event in alarmEventsList.events | itemsPerPage: alarmEventsList.perPage" total-items="alarmEventsList.eventsCount" ng-class-odd="'odd'" ng-class-even="'even'">
+            <!--<tr ng-repeat="event in alarmEventsList.events" ng-class-odd="'odd'" ng-class-even="'even'">-->
+                <td>{{event.createdAt | date:'yyyy/MM/dd HH:mm:ss'}}</td>
+                <td>{{event.msg}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls on-page-change="alarmEventsList.pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+</div>

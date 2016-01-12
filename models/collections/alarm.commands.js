@@ -1,0 +1,1 @@
+this.AlarmCommands = new Mongo.Collection("alarm.commands");

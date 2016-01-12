@@ -1,0 +1,14 @@
+<div class="col-sm-4">{{switchController.title}}</div>
+<div class="col-sm-8">
+    <div class="switch">
+        <input type="radio" class="switch-input" name="{{switchController.id}}" value="0"
+           id="{{switchController.id}}-off" ng-model="switchController.value"
+           ng-change="switchController.sendCommand(switchController.value)">
+        <label for="{{switchController.id}}-off" class="switch-label switch-label-off">Off</label>
+        <input type="radio" class="switch-input" name="{{switchController.id}}" value="1"
+           id="{{switchController.id}}-on" ng-model="switchController.value"
+           ng-change="switchController.sendCommand(switchController.value)">
+        <label for="{{switchController.id}}-on" class="switch-label switch-label-on">On</label>
+        <span class="switch-selection"></span>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+AlarmEvents = new Mongo.Collection('alarm.events');

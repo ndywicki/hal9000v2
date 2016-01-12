@@ -13,7 +13,7 @@ But I've added some IOT module like temperature, humidity sensors based on the c
 The new stack is base on :
 	- [MQTT](http://mqtt.org/) protocole for communication between all IOT objects,
 	- [Node-RED](http://nodered.org/) application to orchestrate and build scenario easily
-	- [Meteor(]https://www.meteor.com/) framework with Angular ![Meteor-angular](http://www.angular-meteor.com/) for the front-end solution.
+	- [Meteor](]https://www.meteor.com/) framework with Angular ![Meteor-angular](http://www.angular-meteor.com/) for the front-end solution.
 
 
 ### MQTT

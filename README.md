@@ -11,9 +11,9 @@ But I've added some IOT module like temperature, humidity sensors based on the c
 ## Software
 
 The new stack is base on :
-    - [MQTT](http://mqtt.org/) protocole for communication between all IOT objects,
-    - [Node-RED](http://nodered.org/) application to orchestrate and build scenario easily
-    - [Meteor](]https://www.meteor.com/) framework with Angular [Meteor-angular](http://www.angular-meteor.com/) for the front-end solution.
+  - [MQTT](http://mqtt.org/) protocole for communication between all IOT objects,
+  - [Node-RED](http://nodered.org/) application to orchestrate and build scenario easily
+  - [Meteor](]https://www.meteor.com/) framework with Angular [Meteor-angular](http://www.angular-meteor.com/) for the front-end solution.
 
 
 ### MQTT
@@ -30,10 +30,10 @@ You can also used Node-Red to build domotic scenarios.
 Meteor it's a great framework to build quickly a real-time application.
 Server can subscribed to MQTT broker and update in real-time all connected client view
 Used packages:
-	- Package 1
-	- Package 2
-	- Package 3
-	- Package 4
+  - Package 1
+  - Package 2
+  - Package 3
+  - Package 4
 
 Meteor application is deployed on Amazon EC2 cloud free instance (it's enough for my requirement).
 For Meteor deployment I'm used the [Meteor Up X](https://github.com/arunoda/meteor-up/tree/mupx) tool

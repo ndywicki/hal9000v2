@@ -23,11 +23,11 @@ I also rewrote the NodeJS alarm module to make it standalone
   
 ### MQTT
 
-I've used the [Mosquitto](http://mosquitto.org/) broker deployed on the Rapsberry Pi 2
+I used the [Mosquitto](http://mosquitto.org/) broker deployed on the Rapsberry Pi 2
 
 ### Node-red
 
-I used Node-red to store all MQTT events in the MongoDB database both deployed on the Rapsberry Pi 2
+Node-red is used to store all MQTT events in the MongoDB database both deployed on the Rapsberry Pi 2
 Node-Red can be used to build domotic scenarios easily.
 
 ### Meteor

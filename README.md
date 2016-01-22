@@ -2,12 +2,15 @@
 
 After deploy a first solution to modernize my old wired home alarm, I discovered a new technical stack more easily extensible for connected objects.
 
+![Dashboard](https://cloud.githubusercontent.com/assets/1721344/12309412/dc6b9040-ba4a-11e5-8db1-079da269369b.png)
+
 ## Hardware
 
 No change on existing alarm hardware base on existing sensors and sirens. All managed via an Arduino.
 But I added some IOT module like temperature, humidity sensors based on the cheap wifi chip [ESP8266](http://www.esp8266.com/).
 I also added module to support domotic module like [Chacon](http://www.chacon.be/index.php/faqs/domotique.html) or [Blyss](http://www.castorama.fr/store/pages/blyss-domotique-blyssbox.html). Finally in the futur add a zwave protocole support
 
+![Global schema]()
 
 ## Software
 

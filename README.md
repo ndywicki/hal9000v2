@@ -21,7 +21,7 @@ The new stack is base on :
   - [Motion] (http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome) for camera streaming and motion detection
 
  
-I also rewrote the NodeJS alarm module to make it standalone
+I also rewrote the NodeJS [alarm module](https://github.com/ndywicki/hal9000-alarm) to make it standalone
 
   
 ### MQTT

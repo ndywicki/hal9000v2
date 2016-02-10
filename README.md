@@ -1,6 +1,6 @@
 # How I modernize alarm home version 2.0
 
-After deploy a first solution to modernize my old wired home alarm, I discovered a new technical stack more easily extensible for connected objects.
+After deploy a [first solution](https://github.com/ndywicki/hal9000) to modernize my old wired home alarm, I discovered a new technical stack more easily extensible for connected objects.
 
 ![Dashboard](https://cloud.githubusercontent.com/assets/1721344/12309412/dc6b9040-ba4a-11e5-8db1-079da269369b.png)
 

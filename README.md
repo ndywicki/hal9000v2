@@ -53,6 +53,6 @@ The alarm status value is retreived from the mongoDB database.
 
 To use ESP82666 like an arduino you can find many resources on the net (ex https://hackaday.io/project/5150-arduino-ide-for-esp8266-quickstart-guide)
 
-You can plug any sensor
+You can plug any arduino sensor
 
 TODO

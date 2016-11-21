@@ -1,9 +1,10 @@
 .idea/
 *.iml
+node_modules/
+public/bower_components/
 
 # MupX
-mup.json
-settings.json
+.deploy/
 
 # Dev scripts
 *.bat

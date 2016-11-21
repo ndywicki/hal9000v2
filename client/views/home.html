@@ -50,27 +50,27 @@
                 <div class="info-user">
                     <span aria-hidden="true">tempo:</span>
                         <span aria-hidden="true">
-                            <input type="number" class="numeric numeric-label" ng-model=alarmCtrl.alarmCmd.tempo id="tempo" ng-change="alarmCtrl.sentCommand('tempo')">
+                            <input type="number" class="numeric numeric-label" ng-model=alarmCtrl.alarmCmd.tempo id="tempo" ng-change="alarmCtrl.sendCommand('tempo')">
                         </span>
                 </div>
                 <div class="switch">
                     <input type="radio" class="switch-input" name="view" value="{{alarmCtrl.AlarmStatusEnum.off}}"
                            id="off" ng-model="alarmCtrl.alarmCmd.status"
-                           ng-change="alarmCtrl.sentCommand('status')">
-                    <label for="off" class="switch-label switch-label-off">Off</label>
+                           ng-change="alarmCtrl.sendCommand('status')">
+                    <label for="off" class="switch-labsendCommandl switch-label-off">Off</label>
                     <input type="radio" class="switch-input" name="view" value="{{alarmCtrl.AlarmStatusEnum.armed}}"
                            id="on" ng-model="alarmCtrl.alarmCmd.status"
-                           ng-change="alarmCtrl.sentCommand('status')">
+                           ng-change="alarmCtrl.sendCommand('status')">
                     <label for="on" class="switch-label switch-label-on">Armed</label>
                     <span class="switch-selection"></span>
                 </div>
 
                 <div class="switch switch-blue">
                     <input type="radio" class="switch-input" name="view2" value="{{alarmCtrl.AlarmModeEnum.full}}"
-                           id="full" checked="" ng-model="alarmCtrl.alarmCmd.mode" ng-change="alarmCtrl.sentCommand('mode')">
+                           id="full" checked="" ng-model="alarmCtrl.alarmCmd.mode" ng-change="alarmCtrl.sendCommand('mode')">
                     <label for="full" class="switch-label switch-label-off">Full</label>
                     <input type="radio" class="switch-input" name="view2" value="{{alarmCtrl.AlarmModeEnum.perimetric}}"
-                           id="perimetric" ng-model="alarmCtrl.alarmCmd.mode" ng-change="alarmCtrl.sentCommand('mode')">
+                           id="perimetric" ng-model="alarmCtrl.alarmCmd.mode" ng-change="alarmCtrl.sendCommand('mode')">
                     <label for="perimetric" class="switch-label switch-label-on">Perimetric</label>
                     <span class="switch-selection"></span>
                 </div>
@@ -183,7 +183,7 @@
         <!-- DONUT CHART BLOCK -->
         <div class="col-sm-3 col-lg-3">
             <div class="dash-unit">
-                <nd-chart-pie title="Humidité" topic="revspace/sensors/nose/humidity" color="#b2c831"></nd-chart-pie>
+                <nd-chart-pie title="Humidité" topic="sensors/salon/humidity" color="#b2c831"></nd-chart-pie>
             </div>
         </div>
 
@@ -199,7 +199,7 @@
             <div class="half-unit">
                 <dtitle>Température</dtitle>
                 <!--<nd-chart id="temp1" topic="revspace/sensors/2-t1"></nd-chart>-->
-                <nd-chart-line id="temp1" topic="revspace/sensors/4-t0"></nd-chart-line>
+                <nd-chart-line id="temp1" topic="revspace/sensors/temperature/18/0"></nd-chart-line>
             </div>
         </div>
     </div><!-- /row -->

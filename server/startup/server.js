@@ -1,11 +1,11 @@
 Meteor.startup(function() {
+    //SensorTest.mqttConnect('mqtt://test.mosquitto.org', ['revspace/#']);
+    //Sensors.mqttConnect('mqtt://'+Meteor.settings.mqttServer+':1883', ['sensors/#']);
+    Sensors.mqttConnect(process.env.MQTT_URL, ['sensors/#']);
 
-    //Sensors.mqttConnect('mqtt://test.mosquitto.org', ['revspace/#']);
-    Sensors.mqttConnect('mqtt://'+Meteor.settings.mqttServer+':1883', ['sensors/#']);
+    AlarmSensors.mqttConnect(process.env.MQTT_URL, ['alarm/sensors/#']);
+    AlarmCommands.mqttConnect(process.env.MQTT_URL, ['alarm/commands']);
 
-    AlarmSensors.mqttConnect('mqtt://'+Meteor.settings.mqttServer+':1883', ['alarm/sensors/#']);
-    AlarmCommands.mqttConnect('mqtt://'+Meteor.settings.mqttServer+':1883', ['alarm/commands']);
-
-    LightsCommands.mqttConnect('mqtt://'+Meteor.settings.mqttServer+':1883', ['lights/#']);
+    LightsCommands.mqttConnect(process.env.MQTT_URL, ['lights/#']);
 });
 

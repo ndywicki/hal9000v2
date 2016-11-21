@@ -29,11 +29,16 @@ angular.module('hal9000').directive('ndChartLine', function () {
                         vm.labels = [];
                         var values = [];
                         //build new chart objects
-                        sensor.forEach(function (data) {
-                            vm.labels.unshift(moment({hour: data._id.hour, minute:data._id.minute}).format('HH:mm'));
-                            //two digit
-                            values.unshift(Math.round(data.avgValue * 10) / 10);
-                        });
+                        if(sensor) {
+                            sensor.forEach(function (data) {
+                                vm.labels.unshift(moment({
+                                    hour: data._id.hour,
+                                    minute: data._id.minute
+                                }).format('HH:mm'));
+                                //two digit
+                                values.unshift(Math.round(data.avgValue * 10) / 10);
+                            });
+                        }
                         vm.data.push(values);
                     });
                 }

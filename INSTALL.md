@@ -1,4 +1,4 @@
-* Checkout code from git:
+* Checkout code from git
 
 * Install dependencies:
 meteor npm install
@@ -17,7 +17,7 @@ Accounts.createUser({
     }
 });
 
-* Deploy:
+* Deployment:
 cd .deploy
 npm install -g mup
 mup.cmd setup

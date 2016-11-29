@@ -16,12 +16,12 @@ meteor --settings .deploy/settings.json
 
 ```javascript
 Accounts.createUser({
-    username: myname,
-    email: myemail,
-    password: mypassword,
-    profile: {
-     name: myname,
-     createdOn: new Date()
+    'username': 'myname',
+    'email': 'myemail',
+    'password': 'mypassword',
+    'profile': {
+        'name': 'myname',
+        'createdOn': new Date()
     }
 });
 ```
